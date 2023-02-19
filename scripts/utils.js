@@ -26,13 +26,10 @@ export const getPosts = () => {
 };
 
 export const getReadTime = (title) => {
-  for (const post of getPosts()) {
-    if (post.data.title === title) {
-      const wordsPerMinute = 200;
-      const noOfWords = post.content.split(/\s/g).length;
-      const minutes = noOfWords / wordsPerMinute;
-      const readTime = Math.ceil(minutes);
-      return readTime;
-    }
-  }
+  const {content} = matter(fs.readFileSync(path.join(process.cwd(), 'pages', 'blog', title + '.mdx'), 'utf-8'));
+  const wordsPerMinute = 200;
+  const noOfWords = content.split(/\s/g).length;
+  const minutes = noOfWords / wordsPerMinute;
+  const readTime = Math.ceil(minutes);
+  return readTime;
 }

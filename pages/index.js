@@ -14,7 +14,7 @@ import Meta from "@/components/Meta";
 export default function Home({ posts }) {
   const theme = useRecoilValue(themeState);
   return (
-    <div className="font-dosis">
+    <div className="font-dosis ">
       <Meta
         title={"Beshoy Kamel"}
         keywords="beshoy kamel, bwkam, beshoy kamel github, bwkam github"
@@ -25,12 +25,25 @@ export default function Home({ posts }) {
       />
       {/* simple intro */}
       <section className="flex flex-col h-80 justify-center items-center space-y-2">
-        <h1 className="text-pink text-6xl font-extrabold">bwkam.</h1>
+        <h1 className="text-pink text-6xl font-extrabold">
+          <Typewriter
+            onInit={(typewriter) => {
+              typewriter
+                .typeString(
+                  "bwkam"
+                )
+                .start();
+            }}
+            options={{
+              delay: 70,
+            }}
+          />
+        </h1>
         <p className="text-green text-2xl">
           A <span className="underline">full-stack</span> developer. 😺
         </p>
         <div
-          className={`w-full pt-2 max-w-2xl px-20 lg:px-0 font-semibold italic text-xxl ${
+          className={`w-full pt-2 max-w-2xl px-20 lg:px-0 font-semibold  text-xxl ${
             theme === true ? "text-white" : "text-black"
           }`}
         >
@@ -52,12 +65,16 @@ export default function Home({ posts }) {
       {/* <div className='flex justify-center'>
         <button className='rounded-2xl bg-crust p-4 text-white text-2xl font-light shadow-xl hover:text-sky'><Link href="/blog">Check out my blog</Link></button>
       </div> */}
-      <section className="flex flex-col items-center px-20 lg:px-40 py-10">
-        {posts.map((post) => (
-          <Link key={post.slug} href={`/blog/${post.slug}`}>
+
+      <section className="flex flex-col items-center px-20 lg:px-40 space-y-5">
+        <h3 className="text-3xl text-white font-light">Latest Posts</h3>
+        
+        {posts.slice(0, 3).sort((a, b) => a.data.id - b.data.id).reverse().map((post) => (
+          console.log(post.data.id),
+          <Link key={post.data.id} href={`/blog/${post.slug}`}>
             <div className="group cursor-pointer rounded-lg overflow-hidden">
               <Image
-                className=" w-50 object-cover h-80 group-hover:scale-105 transition-transform duration-200 ease-in-out"
+                className=" w-50 object-cover h-80 lg:group-hover:scale-105 transition-transform duration-200 ease-in-out"
                 src={require("../images/" + post.data.image.path)}
                 width={post.data.image.width}
                 height={post.data.image.height}

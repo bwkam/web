@@ -4,7 +4,10 @@ import { XMarkIcon, Bars3Icon } from "@heroicons/react/24/outline";
 import { MoonIcon, RocketLaunchIcon, SunIcon } from "@heroicons/react/24/solid";
 import { themeState } from "@/atoms/theme";
 import { useRecoilState } from "recoil";
-import { FaGithub } from "react-icons/fa";
+import { FaGithub, FaMoon, FaNewspaper, FaSearch, FaSun } from "react-icons/fa";
+import { AiFillHome } from "react-icons/ai";
+import { IoMdContact } from "react-icons/io";
+import { BsQuestionCircle } from "react-icons/bs";
 
 function Header() {
   const [clicked, setClicked] = useState(false);
@@ -25,13 +28,19 @@ function Header() {
   return (
     <div>
       {/* lg >= */}
-      <div className="hidden lg:flex justify-between shadow-2xl items-center px-20 h-18 py-2">
+      <div className="hidden lg:flex justify-between  items-center px-10  pt-8">
         <div className="flex items-center space-x-2 text-3xl  font-bold cursor-pointer">
           <div>
             <Link href="/" className="text-mauve">
               bw
             </Link>
-            <span className="underline text-mauve decoration-white">k</span>
+            <span
+              className={`underline text-mauve ${
+                theme === true ? "decoration-white" : "decoration-black"
+              }`}
+            >
+              k
+            </span>
           </div>
           <RocketLaunchIcon className="h-6 text-red" />
         </div>
@@ -42,84 +51,81 @@ function Header() {
           <Link className="hover:text-pink" href="/about">
             About
           </Link>
+          <Link className="hover:text-pink" href="/blog">
+            Blog
+          </Link>
           <Link className="hover:text-pink" href="/contact">
             Contact
           </Link>
-          <FaGithub className="text-3xl cursor-pointer text-sapphire" />
-          {theme === true ? (
-            <SunIcon
-              className="h-8 cursor-pointer hover:text-white"
-              onClick={changeTheme}
-            />
-          ) : (
-            <MoonIcon className="h-8 cursor-pointer" onClick={changeTheme} />
-          )}
+          <div className="h-full">|</div>
+          <div className="flex space-x-5">
+            <FaGithub className="text-3xl cursor-pointer text-sapphire" />
+            {theme === true ? (
+              <FaSun
+                className=" cursor-pointer text-3xl text-pink"
+                onClick={changeTheme}
+              />
+            ) : (
+              <FaMoon
+                className="cursor-pointer text-3xl text-pink"
+                onClick={changeTheme}
+              />
+            )}
+          </div>
         </div>
       </div>
 
       {/* mobile */}
-      <div className="lg:hidden shadow-2xl items-center h-18 py-2 px-5">
-        <div className="flex w-full justify-between">
-          <div className="flex items-center space-x-2 text-3xl  font-bold cursor-pointer">
-            <div>
-              <Link href="/" className="text-mauve">
-                bw
-                <span
-                  className={`underline text-mauve decoration-white ${
-                    theme === true ? "decoration-white" : "decoration-black"
-                  }`}
-                >
-                  k
-                </span>
-              </Link>
-            </div>
-            <RocketLaunchIcon className="h-6 text-red" />
-          </div>
-          <div className="flex items-center space-x-3">
-            <Link href="/">
-              <FaGithub className="text-3xl text-sapphire cursor-pointer" />
+      <div className="flex lg:hidden w-full justify-between items-center px-10 pt-8 ">
+        <div className="flex items-center space-x-2 text-3xl  font-bold cursor-pointer">
+          <div>
+            <Link href="/" className="text-mauve">
+              bw
             </Link>
-            {theme === true ? (
-              <SunIcon
-                className="h-8 cursor-pointer text-sapphire hover:text-white"
-                onClick={changeTheme}
-              />
-            ) : (
-              <MoonIcon
-                className="h-8 text-sapphire cursor-pointer"
-                onClick={changeTheme}
-              />
-            )}
-
-            <Bars3Icon
-              className="h-10 lg:hidden cursor-pointer rounded-lg"
-              onClick={openMenu}
+            <span
+              className={`underline text-mauve  ${
+                theme === true ? "decoration-white" : "decoration-black"
+              }`}
+            >
+              k
+            </span>
+          </div>
+          <RocketLaunchIcon className="h-6 text-red" />
+        </div>
+        <div className="flex space-x-5">
+          <FaGithub className="text-3xl cursor-pointer text-sapphire" />
+          {theme === true ? (
+            <FaSun
+              className=" cursor-pointer text-3xl text-pink"
+              onClick={changeTheme}
             />
-          </div>
+          ) : (
+            <FaMoon
+              className="cursor-pointer text-3xl text-pink"
+              onClick={changeTheme}
+            />
+          )}
         </div>
-        <div
-          className={`fixed top-0 ${
-            clicked === false ? "right-[-250px]" : "right-0"
-          } w-[240px] h-screen z-50 bg-crust p-5
-      text-white duration-300 lg:hidden`}
-        >
-          <div className="w-full">
-            <div className="flex justify-end w-full cursor-pointer">
-              <XMarkIcon onClick={closeMenu} className="h-10" />
-            </div>
-            <div className="flex flex-col space-y-5 p-10 text-xl font-semibold">
-              <Link className="hover:text-pink" href="/">
-                Home
-              </Link>
-              <Link className="hover:text-pink" href="/about">
-                About
-              </Link>
-              <Link className="hover:text-pink" href="/contact">
-                Contact
-              </Link>
-            </div>
-          </div>
-        </div>
+      </div>
+      <div
+        className={`lg:hidden fixed bottom-3 bg-crust flex justify-center items-center ${
+          theme === true ? "text-white border-white" : "text-black border-black"
+        } text-3xl left-[50%] rounded-full z-[99] space-x-3 px-3 py-2 translate-x-[-50%] bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-60  border-2 shadow-xl`}
+      >
+        <Link href="/">
+          <AiFillHome />
+        </Link>
+        <Link href="/contact">
+          <IoMdContact />
+        </Link>
+        <Link href="/about">
+          <BsQuestionCircle />
+        </Link>
+        <div>|</div>
+        <FaGithub className="text-3xl cursor-pointer text-green" />
+        <Link href="/blog">
+          <FaNewspaper className="text-3xl cursor-pointer text-red" />
+        </Link>
       </div>
     </div>
   );

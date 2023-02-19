@@ -6,6 +6,8 @@ const Meta = ({ title, keywords, image, description, width, height }) => {
       <title>{title}</title>
       <meta name="viewport" content="width=device-width, initial-scale=1" />
       <meta name="keywords" content={keywords} />
+      <meta name="robots" content="index, follow" />
+      <meta name="googlebot" content="index, follow" />
       <meta property="og:title" content={title} />
       <meta property="og:type" content="article" />
       <meta property="og:url" content={`/blog/${title}`} />

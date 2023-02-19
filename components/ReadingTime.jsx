@@ -1,5 +1,5 @@
 function ReadingTime({ readingTime }) {
-  return <div>{readingTime}</div>;
+  return <h6>{readingTime}</h6>;
 }
 
 export default ReadingTime;

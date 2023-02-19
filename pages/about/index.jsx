@@ -1,4 +1,6 @@
 import Meta from "@/components/Meta";
+import Typewriter from "typewriter-effect";
+import { motion } from "framer-motion";
 
 function About() {
   return (
@@ -11,21 +13,73 @@ function About() {
         width={1200}
         height={630}
       />
-      <div className="flex justify-center items-center px-40 py-10 text-subtext1 text-2xl">
-        <p className="font-bold leading-10">
-          Just another 15 years old kid with abnormal enthusiasm for Computer
-          Science. I'm also a FOSS lover and I like learning about how low level
-          operations are done such as Xorg which is also another topic I'm
-          interested at. I'm good at front-end web development and can help with
-          building optimized and elegant websites for you, just hit me up ⚡ ❤️
-        </p>
+      <div className="flex justify-center font-bold leading-10 items-center px-40 py-10 text-subtext1 text-2xl">
+        <Typewriter
+          onInit={(typewriter) => {
+            typewriter
+              .typeString(
+                `
+                hi, I'm just a regular 15 years old kid with abnormal enthusiasm for Computer Science and FOSS. I've been passionate about computers ever since I was a kid, thanks to my father who exposed this tech to me at a very young age. I'm a self taught programmer, I kicked off my journey by playing with Roblox Studio, eventually, I decided to learn low level programming, move to Linux, learn React/NextJS, and adopt HaxeFlixel as my primary game engine. I'm currently attempting to recreate software such as window managers, terminal emulators, useful web apps...etc.
+              `
+              )
+              .pauseFor(2500)
+              .start();
+          }}
+          options={{
+            delay: 50,
+          }}
+        />
       </div>
+
       {/* skills */}
       <div className="flex flex-col justify-center items-center space-y-5">
-        <h2 className="text-4xl text-white font-bold cons">Skills</h2>
-        <p className="text-mauve text-xl font-light">
-          Below are technologies and tools I use at my work 👇
-        </p>
+        <motion.h2
+          initial={{
+            x: -100,
+            opacity: 0,
+          }}
+          animate={{
+            x: 0,
+            opacity: 1,
+          }}
+          transition={{
+            duration: 0.5,
+            delay: 0.5,
+          }}
+          className="text-4xl text-white font-bold cons"
+        >
+          <Typewriter
+            onInit={(typewriter) => {
+              typewriter
+                .typeString(
+                  `
+               Skills`
+                )
+                .pauseFor(2500)
+                .start();
+            }}
+            options={{
+              delay: 20,
+            }}
+          />
+        </motion.h2>
+        <div className="text-mauve text-xl font-light">
+          <Typewriter
+            onInit={(typewriter) => {
+              typewriter
+                .typeString(
+                  `
+                Below are technologies and tools I use at my work 👇`
+                )
+                .pauseFor(2500)
+                .start();
+            }}
+            options={{
+              delay: 70,
+            }}
+          />
+        </div>
+
         {/* <ul className="flex flex-col space-y-5 text-subtext0 text-lg list-disc list-inside">
           <li>OS: Arch Linux 🐧</li>
           <li>WM/DE: Qtile, Hyprland, and GNOME 💨</li>
