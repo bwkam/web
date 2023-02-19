@@ -1,6 +1,5 @@
 import Head from "next/head";
 import Link from "next/link";
-import "@fontsource/dosis";
 import { GetStaticProps } from "next";
 import { getPosts } from "@/scripts/utils";
 import Image from "next/image";
