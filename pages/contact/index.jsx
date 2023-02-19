@@ -3,6 +3,7 @@ import { FaGithub, FaSpotify } from "react-icons/fa";
 import { SiGmail } from "react-icons/si";
 import { StyledKofiButton } from "@/components/StyledKofiButton";
 import Meta from "@/components/Meta";
+import "@fontsource/dosis";
 
 function Contact() {
   return (

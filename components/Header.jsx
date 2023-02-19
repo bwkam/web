@@ -8,6 +8,7 @@ import { FaGithub, FaMoon, FaNewspaper, FaSearch, FaSun } from "react-icons/fa";
 import { AiFillHome } from "react-icons/ai";
 import { IoMdContact } from "react-icons/io";
 import { BsQuestionCircle } from "react-icons/bs";
+import "@fontsource/dosis";
 
 function Header() {
   const [clicked, setClicked] = useState(false);

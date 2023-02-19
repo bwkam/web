@@ -2,6 +2,7 @@ import Meta from "@/components/Meta";
 import PostsList from "@/components/PostsList";
 import { useState } from "react";
 import { getPosts } from "@/scripts/utils";
+import "@fontsource/dosis";
 
 function Blog({ posts }) {
   const [input, setInput] = useState("");

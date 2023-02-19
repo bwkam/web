@@ -1,6 +1,7 @@
 import Meta from "@/components/Meta";
 import Typewriter from "typewriter-effect";
 import { motion } from "framer-motion";
+import "@fontsource/dosis";
 
 function About() {
   return (
