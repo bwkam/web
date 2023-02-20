@@ -17,6 +17,7 @@
     "@next/font": "13.1.6",
     "@reach/disclosure": "^0.18.0",
     "@reach/tooltip": "^0.18.0",
+    "@vercel/analytics": "^0.1.10",
     "eslint": "8.34.0",
     "eslint-config-next": "13.1.6",
     "framer-motion": "^9.0.4",
