@@ -51,7 +51,7 @@ export default function Home({ posts }) {
             onInit={(typewriter) => {
               typewriter
                 .typeString(
-                  "Simple is merely programmer's paradise they say, but some of us still love the sensation of drowning in obsolete, partially documented, and buggy code, and fix it themselves."
+                  "Simple is merely programmer's paradise they say, but some of us still enjoy drowning in obsolete, partially documented, and buggy code, and fix it themselves."
                 )
                 .pauseFor(2500)
                 .start();
@@ -66,15 +66,13 @@ export default function Home({ posts }) {
         <button className='rounded-2xl bg-crust p-4 text-white text-2xl font-light shadow-xl hover:text-sky'><Link href="/blog">Check out my blog</Link></button>
       </div> */}
 
-      <section className="flex flex-col items-center px-20 lg:px-40 space-y-5">
-        <h3 className="text-3xl text-white font-light">Latest Posts</h3>
-        
+      <section className="grid grid-cols-1 gap-3 p-2 sm:p-10">
         {posts.slice(0, 3).sort((a, b) => a.data.id - b.data.id).reverse().map((post) => (
           console.log(post.data.id),
           <Link key={post.data.id} href={`/blog/${post.slug}`}>
             <div className="group cursor-pointer rounded-lg overflow-hidden">
               <Image
-                className=" w-50 object-cover h-80 lg:group-hover:scale-105 transition-transform duration-200 ease-in-out"
+                className=" w-50 object-cover bg-cover h-80 lg:group-hover:scale-105 transition-transform duration-200 ease-in-out"
                 src={require("../images/" + post.data.image.path)}
                 width={post.data.image.width}
                 height={post.data.image.height}

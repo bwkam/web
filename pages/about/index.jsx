@@ -16,7 +16,7 @@ function About() {
         width={1200}
         height={630}
       />
-      <div className="flex justify-center font-bold leading-10 items-center px-40 py-10 text-subtext1 text-2xl">
+      <div className="flex justify-center font-bold leading-10 items-center px-3 sm:px-40 py-10 text-subtext1 text-2xl">
         <Typewriter
           onInit={(typewriter) => {
             typewriter
@@ -93,7 +93,7 @@ function About() {
           <li>Primary CSS framework: TailwindCSS 💙 </li>
           <li>Game engine: Haxeflixel 🌈</li>
         </ul> */}
-        <div className="flex justify-center">
+        <div className="flex justify-center px-3 sm:px-40 ">
           <img src="https://skillicons.dev/icons?i=js,html,css,react,nextjs,haxe,haxeflixel,c,tailwindcss,linux,git,firebase,mongodb,nodejs,express,figma,ps,bash,neovim,vim,github,markdown,postman,py,vscode,&perline=10&theme=dark" />
         </div>
       </div>
