@@ -60,7 +60,9 @@ function Header() {
           </Link>
           <div className="h-full">|</div>
           <div className="flex space-x-5">
-            <FaGithub className="text-3xl cursor-pointer text-sapphire" />
+            <Link href="https://github.com/bwkam/bwkam.github.io">
+              <FaGithub className="text-3xl cursor-pointer text-sapphire" />
+            </Link>
             {theme === true ? (
               <FaSun
                 className=" cursor-pointer text-3xl text-pink"
@@ -78,7 +80,9 @@ function Header() {
 
       {/* mobile */}
       <div className="flex lg:hidden w-full justify-between items-center px-10 pt-8 ">
-        <FaGithub className="text-3xl cursor-pointer text-sapphire" />
+        <Link href="https://github.com/bwkam/bwkam.github.io">
+          <FaGithub className="text-3xl cursor-pointer text-sapphire" />
+        </Link>
         <div className="flex items-center space-x-2 text-3xl  font-bold cursor-pointer">
           <div>
             <Link href="/" className="text-mauve">
@@ -121,7 +125,9 @@ function Header() {
           <BsQuestionCircle />
         </Link>
         <div>|</div>
-        <FaGithub className="text-3xl cursor-pointer text-green" />
+        <Link href="https://github.com/bwkam/bwkam.github.io">
+          <FaGithub className="text-3xl cursor-pointer text-green" />
+        </Link>
         <Link href="/blog">
           <FaNewspaper className="text-3xl cursor-pointer text-red" />
         </Link>

@@ -11,7 +11,7 @@ function Contact() {
   const theme = useRecoilValue(themeState);
 
   return (
-    <div className="h-screen">
+    <div className="h-screen overflow-hidden">
       <Meta
         title={"Contact | Beshoy Kamel"}
         keywords="beshoy kamel, bwkam, beshoy kamel github, bwkam github, how to contact beshoy kamel, how to contact bwka, beshoy kamel email, bwkam email"
