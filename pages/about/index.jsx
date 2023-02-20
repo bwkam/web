@@ -12,7 +12,7 @@ function About() {
         title={"About | Beshoy Kamel"}
         keywords="beshoy kamel, bwkam, about beshoy kamel, about bwkam, who is beshoy kamel, who is bwkam"
         description="About Beshoy Kamel"
-        image="/home.jpg"
+        image="home.jpg"
         width={1200}
         height={630}
       />

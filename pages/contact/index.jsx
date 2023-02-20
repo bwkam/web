@@ -16,7 +16,7 @@ function Contact() {
         title={"Contact | Beshoy Kamel"}
         keywords="beshoy kamel, bwkam, beshoy kamel github, bwkam github, how to contact beshoy kamel, how to contact bwka, beshoy kamel email, bwkam email"
         description="Beshoy Kamel's contact page"
-        image="/home.jpg"
+        image="home.jpg"
         width={1200}
         height={630}
       />

@@ -19,7 +19,7 @@ export default function Home({ posts }) {
         title={"Beshoy Kamel"}
         keywords="beshoy kamel, bwkam, beshoy kamel github, bwkam github"
         description="Beshoy Kamel's personal website"
-        image="/home.jpg"
+        image="home.jpg"
         width={1200}
         height={630}
       />

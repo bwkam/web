@@ -17,7 +17,7 @@ function Blog({ posts }) {
       <Meta
         title="Blog | Beshoy Kamel"
         keywords="beshoy kamel's blog, bwkam's blog,  beshoy kamel, bkamel"
-        image="/home.jpg"
+        image="home.jpg"
         width={1200}
         height={630}
         description="Beshoy Kamel's blog"
