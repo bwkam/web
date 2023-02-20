@@ -2,6 +2,8 @@ import Meta from "@/components/Meta";
 import Typewriter from "typewriter-effect";
 import { motion } from "framer-motion";
 import "@fontsource/dosis";
+import { useRecoilValue } from "recoil";
+import { themeState } from "@/atoms/theme";
 
 function About() {
   return (
@@ -47,7 +49,9 @@ function About() {
             duration: 0.5,
             delay: 0.5,
           }}
-          className="text-4xl text-white font-bold cons"
+          className={`text-4xl font-bold ${
+            useRecoilValue(themeState) === true ? "text-white" : "text-black"
+          }`}
         >
           <Typewriter
             onInit={(typewriter) => {

@@ -4,8 +4,12 @@ import { SiGmail } from "react-icons/si";
 import { StyledKofiButton } from "@/components/StyledKofiButton";
 import Meta from "@/components/Meta";
 import "@fontsource/dosis";
+import { useRecoilValue } from "recoil";
+import { themeState } from "@/atoms/theme";
 
 function Contact() {
+  const theme = useRecoilValue(themeState);
+
   return (
     <div className="h-screen">
       <Meta
@@ -17,10 +21,12 @@ function Contact() {
         height={630}
       />
       <div className="flex h-full space-y-4 text-white text-4xl font-bold flex-col justify-center items-center">
-        <h1>My 21th Century Things</h1>
+        <h1 className={`${theme === true ? "text-white" : "text-black"}`}>
+          My 21th Century Things
+        </h1>
         <div className="flex space-x-5 pt-3 ">
           <Link href="https://github.com/bwkam">
-            <FaGithub />
+            <FaGithub className="text-mauve" />
           </Link>
           <Link href="https://open.spotify.com/user/9dw34x65deycigiow2gwla7aa?si=7251a74911e64cbd">
             <FaSpotify className="text-green" />

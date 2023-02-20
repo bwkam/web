@@ -78,6 +78,7 @@ function Header() {
 
       {/* mobile */}
       <div className="flex lg:hidden w-full justify-between items-center px-10 pt-8 ">
+        <FaGithub className="text-3xl cursor-pointer text-sapphire" />
         <div className="flex items-center space-x-2 text-3xl  font-bold cursor-pointer">
           <div>
             <Link href="/" className="text-mauve">
@@ -93,20 +94,17 @@ function Header() {
           </div>
           <RocketLaunchIcon className="h-6 text-red" />
         </div>
-        <div className="flex space-x-5">
-          <FaGithub className="text-3xl cursor-pointer text-sapphire" />
-          {theme === true ? (
-            <FaSun
-              className=" cursor-pointer text-3xl text-pink"
-              onClick={changeTheme}
-            />
-          ) : (
-            <FaMoon
-              className="cursor-pointer text-3xl text-pink"
-              onClick={changeTheme}
-            />
-          )}
-        </div>
+        {theme === true ? (
+          <FaSun
+            className=" cursor-pointer text-3xl text-pink"
+            onClick={changeTheme}
+          />
+        ) : (
+          <FaMoon
+            className="cursor-pointer text-3xl text-pink"
+            onClick={changeTheme}
+          />
+        )}
       </div>
       <div
         className={`lg:hidden fixed bottom-3 bg-crust flex justify-center items-center ${
