@@ -14,7 +14,7 @@ import Meta from "@/components/Meta";
 export default function Home({ posts }) {
   const theme = useRecoilValue(themeState);
   return (
-    <div className="font-dosis ">
+    <div className="font-dosis min-h-screen">
       <Meta
         title={"Beshoy Kamel"}
         keywords="beshoy kamel, bwkam, beshoy kamel github, bwkam github"
