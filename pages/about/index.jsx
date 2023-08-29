@@ -22,7 +22,7 @@ function About() {
             typewriter
               .typeString(
                 `
-                hi, I'm just a regular 15 years old kid with abnormal enthusiasm for Computer Science and FOSS. I've been passionate about computers ever since I was a kid, thanks to my father who exposed this tech to me at a very young age. I'm a self taught programmer, I kicked off my journey by playing with Roblox Studio, eventually, I decided to learn low level programming, move to Linux, learn React/NextJS, and adopt HaxeFlixel as my primary game engine. I'm currently attempting to recreate software such as window managers, terminal emulators, useful web apps...etc.
+                hi, I'm just a regular teen kid with abnormal enthusiasm for Computer Science and FOSS. I've been passionate about computers ever since I was a kid, thanks to my father who exposed this tech to me at a very young age. I'm a self taught programmer, I kicked off my journey by playing with Roblox Studio, eventually, I decided to learn low level programming, move to Linux, learn React/NextJS, and adopt HaxeFlixel as my primary game engine. I'm currently attempting to recreate software such as window managers, terminal emulators, useful web apps...etc.
               `
               )
               .pauseFor(2500)
